@@ -136,11 +136,11 @@ export async function handler(chatUpdate) {
             if (settings) {
                 if (!('self' in settings)) settings.self = false
                 if (!('autoread' in settings)) settings.autoread = false
-                if (!('restrict' in settings)) settings.restrict = true
+                if (!('restrict' in settings)) settings.restrict = false
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
                 autoread: false,
-                restrict: true,
+                restrict: false
             }
         } catch (e) {
             console.error(e)
@@ -528,7 +528,6 @@ export async function deleteUpdate(message) {
             return
         await this.reply(msg.chat, `
 Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-
 Sedang mengirim ulang pesan
 `.trim(), msg, {
             mentions: [participant]
