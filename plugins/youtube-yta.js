@@ -37,7 +37,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
     asDocument: chat.useDocument
   })
 }
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)
+handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
 
