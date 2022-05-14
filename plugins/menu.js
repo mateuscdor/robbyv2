@@ -14,7 +14,8 @@ let tags = {
   'tools': 'Alat',
   'downloader': 'Downloader',
   'owner': 'Khusus Owner',
-  'info': 'Info Bot',',
+  'info': 'Info Bot',
+  '': `Gatau apaan`
 }
 const defaultMenu = {
   before: `
