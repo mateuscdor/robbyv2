@@ -1,6 +1,6 @@
 import { youtubeSearch } from '@bochilteam/scraper'
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
+  if (!text) throw `Contoh penggunaan ${usedPrefix}${command} ghost`
   let vid = (await youtubeSearch(text)).video[0]
   if (!vid) throw 'Video/Audio Tidak ditemukan'
   let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
@@ -12,10 +12,10 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 ⏲️ *Published:* ${publishedTime}
 ⌚ *Duration:* ${durationH}
 👁️ *Views:* ${viewH}
-  `.trim(), author, thumbnail, url, '📺Go To Youtube!', null, null, [
-    ['Audio 🎧', `${usedPrefix}yta ${url} yes`],
-    ['Video 🎥', `${usedPrefix}ytv ${url} yes`],
-    ['Youtube Search🔎', `${usedPrefix}yts ${url}`]
+  `.trim(), author, thumbnail, url, 'Pergi ke YouTube!', null, null, [
+    ['MP3', `${usedPrefix}yta ${url} yes`],
+    ['MP4', `${usedPrefix}ytv ${url} yes`],
+    ['Pencarian YouTube', `${usedPrefix}yts ${url}`]
   ], m)
 }
 handler.help = ['play', 'play2'].map(v => v + ' <pencarian>')
